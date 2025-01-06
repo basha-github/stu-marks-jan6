@@ -32,6 +32,22 @@ public class MarksService {
 		
 	}
 
+	public Marks updateStuMarks(Marks marks) {
+		try {
+			Marks newMarks = stuRepo.findById(marks.getRoolNo()).get();
+			if(newMarks != null) {
+				return stuRepo.save(marks);
+			}
+		}catch(Exception e) {
+			e.printStackTrace();
+		}
+		
+		return new Marks();		
+					
+		
+		
+	}
+
 	
 
 }
