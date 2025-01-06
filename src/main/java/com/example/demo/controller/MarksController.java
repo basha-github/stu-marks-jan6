@@ -36,6 +36,12 @@ public class MarksController {
 		return marksService.getAllMarks();
 	}
 	
+	@GetMapping("/exam/marks/search")
+	public Marks getOneStuMarks(@RequestParam int rollNo){
+		
+		return marksService.getStuMarks(rollNo);
+	}
+	
 	@PutMapping("/exam/marks/update")
 	public Marks updateStuMarks(@RequestBody Marks marks ) {
 		return marksService.updateStuMarks(marks);

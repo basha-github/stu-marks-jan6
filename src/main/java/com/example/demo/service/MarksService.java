@@ -67,6 +67,9 @@ public class MarksService {
 		return res;
 	}
 
+	public Marks getStuMarks(int rollNo) {
 	
+		return stuRepo.findById(rollNo).orElse(new Marks());
+	}
 
 }
