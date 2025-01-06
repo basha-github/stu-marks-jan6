@@ -48,6 +48,25 @@ public class MarksService {
 		
 	}
 
+	public String deleteStuMarks(int rollNo) {
+		String res = "successfully deleted rollNo---->"+rollNo;
+		try {
+			Marks newMarks = stuRepo.findById(rollNo).get();
+			if(newMarks != null) {
+				stuRepo.deleteById(rollNo);
+			}
+			else {
+				res = "there is no such rollNo----->"+rollNo;
+			}
+				
+		}catch(Exception e) {
+			res = "there is no such rollNo----->"+rollNo;
+		}
+		
+		
+		return res;
+	}
+
 	
 
 }
